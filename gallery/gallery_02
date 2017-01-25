@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Gallery SHOW</title>
+  <style>
+    body{
+      font-size: 9pt;
+    }
+    div.image-container{
+      position: relative;
+      border: 1px solid #000;
+      height: 600px;
+    }
+    div.image-container img{
+      position: absolute;
+      left:0;
+      top:0;
+      width: 120px;
+    }
+  </style>
+  <script src="../libs/jquery-1.11.0.min.js"></script>
+  <script>
+  $(document).ready(function() {
+      var $images1 = $('#container1 img');
+      var $images2 = $('#container2 img');
+
+      var o = new Gallery();
+
+      o.show({
+        $images : $images1,
+        count : 6
+      });
+      o.show({
+        $images : $images2,
+        width : 300,
+        height : 300
+      });
+  });
+
+function Gallery(){}
+Gallery.prototype.init = function() {
+  this.dftOptions = {
+    imgsid : '',
+    $images : null,
+    count : 4,
+    width : 150,
+    height : 150,
+    oncomplete : function(){}
+  };
+}
+Gallery.prototype.show = function(userOptions) {
+  this.init();
+  var s = $.extend({}, this.dftOptions, userOptions || {});
+  var length = s.$images.length;
+  for(var i=0;i<length;i++){
+    //console.log($images.eq(i).attr('src'));
+    var $img = s.$images.eq(i);
+
+    var x = 100 + ((i%s.count)*s.width);
+    var y = 100 + (parseInt(i/s.count)*s.height);
+
+    console.log(x,y);
+
+    $img.animate({
+      left : x,
+      top : y
+    });
+
+
+}
+}
+
+
+    </script>
+ </head>
+ <body>
+ <p>Container1</p>
+ <div class="image-container" id="container1">
+   <img src="banners/1.png" alt="">
+   <img src="banners/2.png" alt="">
+   <img src="banners/3.png" alt="">
+   <img src="banners/4.png" alt="">
+   <img src="banners/5.png" alt="">
+   <img src="banners/6.png" alt="">
+ </div>
+ <p>container2</p>
+ <div class="image-container" id="container2">
+   <img src="banners/1.png" alt="">
+   <img src="banners/2.png" alt="">
+   <img src="banners/3.png" alt="">
+   <img src="banners/4.png" alt="">
+   <img src="banners/5.png" alt="">
+   <img src="banners/6.png" alt="">
+ </div>
+ </body>
+</html>
