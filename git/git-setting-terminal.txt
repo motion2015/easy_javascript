@@ -1,0 +1,7 @@
+폴더 마다 생기는 .DS_Store 생성 방지하는 방법:
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
+숨겨진 파일 보기 활성화및 비활성화! :
+defaults write com.apple.finder AppleShowAllFiles TRUE
+killall Finder
+exit
