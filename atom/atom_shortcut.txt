@@ -1,0 +1,21 @@
+
+
+
+command-ctrl - f : 전체화면 토글
+편집
+
+"ctrl - shift -k"  : 줄을 삭제한다
+"ctrl - g" : 입력한 줄: 문자로 이동
+"command - shift - d" : 현재 줄 또는 선택된 줄을 복제한다
+ctrl - k : 커서 뒤로 한줄 삭제
+ctrl - [ 현재 줄 내려쓰기
+ctrl -] 현재 줄 들여쓰기
+ctrl -m :  커서 가 위치한 블럭의 사작과 끝으로 이동
+ctrl -j : 현재 커서가 있는 줄 아랫 줄을 이어 붙인다.
+command - ctrl - m : 커서가 있는 블럭을 선택한다
+
+
+
+검색
+command -f : 파일내 단어 검색
+shift - command -f: 프로젝트 내의 해당 단어 검색

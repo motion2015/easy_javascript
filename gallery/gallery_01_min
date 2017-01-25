@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Gallery SHOW</title>
+  <style>
+    body{
+      font-size: 9pt;
+    }
+    div.image-container{
+      position: relative;
+      border: 1px solid #000;
+      height: 400px;
+    }
+    div.image-container img{
+      position: absolute;
+      left:0;
+      top:0;
+      width: 120px;
+    }
+  </style>
+  <script src="../libs/jquery-1.11.0.min.js"></script>
+  <script>
+  $(document).ready(function() {
+        var $images = $("#container1 img");
+        var $images = $("#container1 img");
+
+        dsddsdsjkjkj¥¥yyy
+  });
+  </script>
+ </head>
+ <body>
+ <p>Container1</p>
+ <div class="image-container" id="container1">
+   <img src="../banners/1.png" alt="">
+   <img src="../banners/2.png" alt="">
+   <img src="../banners/3.png" alt="">
+   <img src="../banners/4.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
+ </div>
+ <p>container2</p>
+ <div class="image-container" id="container2">
+   <img src="../banners/1.png" alt="">
+   <img src="../banners/2.png" alt="">
+   <img src="../banners/3.png" alt="">
+   <img src="../banners/4.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
+ </div>
+
+ <p>container3</p>
+ <div class="image-container" id="container3">
+   <img src="../banners/1.png" alt="">
+   <img src="../banners/2.png" alt="">
+   <img src="../banners/3.png" alt="">
+   <img src="../banners/4.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
+ </div>
+ </body>
+</html>
