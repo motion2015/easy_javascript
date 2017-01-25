@@ -25,28 +25,52 @@
       var $images1 = $('#container1 img');
       var $images2 = $('#container2 img');
       o.showGallery({
-        $images : $images1,
-        count : 6
+          imgsid : "#container1 img",
+          count : 6
       });
       o.showGallery({
-        $images : $images2,
-        width : 300,
-        height : 300
+          imgsid : "#container3 img",
+          count : 5
+      });
+      o.showGallery({
+          $images : $images2,
+          width : 300,
+          height : 300,
+          oncomplete : function() {
+              console.log("Gallery Completed!!!");
+          }
       });
   });
 
   var o = {
-    showGallery : function(userOptions) {
-        var dftOptions = {
-          imgsid : '',
-          $images : null,
-          count : 4,
-          width : 150,
-          height : 150,
-          oncomplete : function(){}
-        }
+      showGallery : function(userOptions) {
+          var dftOptions = {
+            imgsid : '',
+            $images : null,
+            count : 4,
+            width : 150,
+            height : 150,
+            oncomplete : function(){}
+          }
         var s = $.extend({}, dftOptions, userOptions || {});
+
+        // if(s.imgsid){
+        //     if(s.$images){
+        //     //s.$images.siblings(".tmpl").remove();
+        //     //    s.$images.parent().append($(s.imgid).addClass("tmpl"));
+        //     }else{
+        //       s.$images = $(s.imgsid);
+        //     }
+        // }
+
+        if(s.imgsid){
+            if(!s.$images){
+                s.$images = $(s.imgsid);
+            }
+        }
+
         var length = s.$images.length;
+        console.log("Length =  " + length);
         for(var i=0;i<length;i++){
           //console.log($images.eq(i).attr('src'));
           var $img = s.$images.eq(i);
@@ -61,7 +85,7 @@
             top : y
           });
         }
-
+        s.oncomplete();
     }
   }
 
@@ -70,21 +94,35 @@
  <body>
  <p>Container1</p>
  <div class="image-container" id="container1">
-   <img src="banners/1.png" alt="">
-   <img src="banners/2.png" alt="">
-   <img src="banners/3.png" alt="">
-   <img src="banners/4.png" alt="">
-   <img src="banners/5.png" alt="">
-   <img src="banners/6.png" alt="">
+   <img src="../banners/1.png" alt="">
+   <img src="../banners/2.png" alt="">
+   <img src="../banners/3.png" alt="">
+   <img src="../banners/4.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
  </div>
  <p>container2</p>
  <div class="image-container" id="container2">
-   <img src="banners/1.png" alt="">
-   <img src="banners/2.png" alt="">
-   <img src="banners/3.png" alt="">
-   <img src="banners/4.png" alt="">
-   <img src="banners/5.png" alt="">
-   <img src="banners/6.png" alt="">
+   <img src="../banners/1.png" alt="">
+   <img src="../banners/2.png" alt="">
+   <img src="../banners/3.png" alt="">
+   <img src="../banners/4.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
+ </div>
+
+ <p>container3</p>
+ <div class="image-container" id="container3">
+   <img src="../banners/1.png" alt="">
+   <img src="../banners/2.png" alt="">
+   <img src="../banners/3.png" alt="">
+   <img src="../banners/4.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
  </div>
  </body>
 </html>

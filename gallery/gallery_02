@@ -77,21 +77,21 @@ Gallery.prototype.show = function(userOptions) {
  <body>
  <p>Container1</p>
  <div class="image-container" id="container1">
-   <img src="banners/1.png" alt="">
-   <img src="banners/2.png" alt="">
-   <img src="banners/3.png" alt="">
-   <img src="banners/4.png" alt="">
-   <img src="banners/5.png" alt="">
-   <img src="banners/6.png" alt="">
+   <img src="../banners/1.png" alt="">
+   <img src="../banners/2.png" alt="">
+   <img src="../banners/3.png" alt="">
+   <img src="../banners/4.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
  </div>
  <p>container2</p>
  <div class="image-container" id="container2">
-   <img src="banners/1.png" alt="">
-   <img src="banners/2.png" alt="">
-   <img src="banners/3.png" alt="">
-   <img src="banners/4.png" alt="">
-   <img src="banners/5.png" alt="">
-   <img src="banners/6.png" alt="">
+   <img src="../banners/1.png" alt="">
+   <img src="../banners/2.png" alt="">
+   <img src="../banners/3.png" alt="">
+   <img src="../banners/4.png" alt="">
+   <img src="../banners/5.png" alt="">
+   <img src="../banners/6.png" alt="">
  </div>
  </body>
 </html>
