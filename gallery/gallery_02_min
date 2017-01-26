@@ -35,8 +35,8 @@
         g.show({
                 imgid : $("#container2 img"),
                 count:4,
-                width: 130,
-                height: 110,
+                width: 150,
+                height: 100,
                 oncomplete : function(){
                         console.log("2 Completed !!!!!!^^");
                 }
