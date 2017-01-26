@@ -46,7 +46,7 @@
                 imgid : $("#container3 img"),
                 count:4,
                 oncomplete : function(){
-                        console.log("3 Completed !!!!!!^^");
+                        console.log("3 minsuk Completed !!!!!!^^");
                 }
         });
 
