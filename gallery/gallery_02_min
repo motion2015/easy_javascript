@@ -25,22 +25,26 @@
         var $images1 = $("#container1 img");
         var $images2 = $("#container2 img");
 
-        o.galleryshow({
+        var g = new Gallery();
+
+        g.show({
                 $images : $images1,
                 count:6
         });
 
-        o.galleryshow({
+        g.show({
                 imgid : $("#container2 img"),
-                count:7,
+                count:4,
+                width: 120,
+                height: 100,
                 oncomplete : function(){
                         console.log("2 Completed !!!!!!^^");
                 }
         });
 
-        o.galleryshow({
+        g.show({
                 imgid : $("#container3 img"),
-                count:3,
+                count:4,
                 oncomplete : function(){
                         console.log("3 Completed !!!!!!^^");
                 }
@@ -50,40 +54,48 @@
 
   });
 
-  var o = {
-          galleryshow : function(userOptions){
-                  var dftOptions = {
-                          $images : null,
-                          count : 4,
-                          width : 150,
-                          height : 150,
-                          oncomplete : function(){}
-                  }
-                  var s = $.extend({},dftOptions,userOptions|| {});
-                  if(s.imgid){
-                          if(!s.$images){
-                                 s.$images = s.imgid;
-                          }
-                  }
-                  var length = s.$images.length;
 
-                  for(i=0;i<length;i++){
-                          var imgs = s.$images[i];
-                          console.log(imgs);
-                          var x = 100 + (i%s.count)*s.width;
-                          var y = 100 + parseInt((i/s.count))*s.height;
-                          $(imgs).css({
-                                  left : x,
-                                  top : y
-                          });
+  function Gallery() {}
+  Gallery.prototype.init = function(userOptions){
+          var dftOptions = {
+                  imgid : '',
+                  $images : null,
+                  count : 4,
+                  width : 150,
+                  height : 150,
+                  oncomplete : function(){}
+            }
+            this.s = $.extend({},dftOptions,userOptions|| {});
+    }
+   Gallery.prototype.validator = function(){
+           var s = this.s;
+           if(s.imgid){
+                   if(!s.$images){
+                          s.$images = s.imgid;
+                   }
+           }
+   }
 
-                  }
-                  s.oncomplete();
+   Gallery.prototype.show = function (userOptions) {
+           this.init(userOptions);
+           this.validator();
+           var s =  this.s;
+           var length = s.$images.length;
 
+           for(i=0;i<length;i++){
+                   var imgs = s.$images[i];
+                   console.log(imgs);
+                   var x = 50 + (i%s.count)*s.width;
+                   var y = 50 + parseInt((i/s.count))*s.height;
+                   $(imgs).css({
+                           left : x,
+                           top : y
+                   });
 
-          }
-  }
-  </script>
+           }
+           s.oncomplete();
+   }
+ </script>
  </head>
  <body>
  <p>Container1</p>

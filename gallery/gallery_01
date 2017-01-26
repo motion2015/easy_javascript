@@ -51,7 +51,7 @@
             width : 150,
             height : 150,
             oncomplete : function(){}
-          }
+            };
         var s = $.extend({}, dftOptions, userOptions || {});
 
         // if(s.imgsid){
